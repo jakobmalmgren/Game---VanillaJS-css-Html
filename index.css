@@ -1,51 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+}
+
+body {
+  background-image: url(/images/wizardBackground.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+body.active {
+  background-image: url(/images/wizardbackground2.avif);
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.5rem;
+}
+.title,
+h2,
+h3 {
+  font-size: 50px;
+  color: white;
+  font-weight: lighter;
+}
+
+.wrapper {
+  display: flex;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .character-card {
-  height: 14rem;
-  margin-top: 0.5rem;
-  width: 94vw;
-  max-width: 230px;
+  height: 26rem;
+  width: 230px;
+  margin: 20px;
   padding: 1vh 1vw;
   font-size: 1.6rem;
   color: white;
   border-radius: 14px;
   position: relative;
-  background: #231d24;
   text-align: center;
-  overflow: hidden;
   border: 0.2rem solid #000721;
   box-shadow: inset 0px 0px 6px 2px rgba(100, 100, 100, 0.2),
     0px 0px 10px rgba(117, 182, 214, 0.2);
+  border: 0.2rem solid #000721;
+  background-color: rgba(0, 0, 0, 0.491);
 }
 
 .name {
   margin: 1vh 0;
-  width: 100%;
-  font-size: 90%;
 }
 
+.avatar-wrapper {
+  height: 170px;
+}
 .avatar {
-  width: 15vh;
-  border: 2px solid #000721;
-  max-width: 100%;
-  opacity: 0.8;
+  height: 100%;
   border-radius: 10px;
-  background-color: rgba(0, 7, 33, 0.8);
+  object-fit: cover;
+  width: 18vh;
 }
 
 .health {
-  font-size: 1.1rem;
-  font-weight: normal;
-  width: 90%;
-  text-align: left;
-  margin: 1vh 5%;
-  color: #ccc;
-  letter-spacing: 0.03em;
+  margin: 2vh 5%;
 }
 
 .health-bar-outer {
@@ -71,9 +100,9 @@ main {
   height: 20%;
   position: absolute;
   bottom: 0;
-  left: 0px;
+  left: 0;
   right: 0;
-  background: #000721;
+  background: #00072149;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,26 +111,81 @@ main {
 
 .dice,
 .placeholder-dice {
-  height: 5.5vh;
-  width: 5.5vh;
   background: #fff;
   border-radius: 5px;
-  border: 1px solid #666;
   color: #000721;
-  text-align: center;
-  line-height: 6vh;
+}
+.dice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  width: 10vh;
 }
 
 button {
   margin-top: 0.5rem;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 1.5rem;
-  border-radius: 6px;
+  border-radius: 55px;
   cursor: pointer;
   height: 9vh;
-  box-shadow: 0px 6px 10px -4px rgba(0, 0, 0, 0.4);
+  min-width: 170px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.112),
+    inset 0 4px 4px rgba(255, 255, 255, 0.671),
+    inset 0 -4px -4px rgba(255, 255, 255, 0.527);
+  background: linear-gradient(to bottom, #fff, #5b5858);
+}
+
+#toggler {
+  transform: scale(15%);
+  width: 360px;
+  height: 160px;
+  background-color: #fff;
+  border-radius: 160px;
+  position: relative;
+  box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.934),
+    inset 0 8px 8px rgba(0, 0, 0, 0.324), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+#toggler-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(to bottom, #444, #222);
+  border-radius: 50%;
+  transform: scale(90%);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+    inset 0 4px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -4px -4px rgba(255, 255, 255, 0.2);
+  transition: 0.5s;
+}
+#toggler-indicator.active {
+  left: 200px;
+}
+.end-game {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.end-emoji {
+  font-size: 80px;
+}
+
+@media screen and (max-width: 970px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  #monster,
+  #hero {
+    display: flex;
+    justify-content: center;
+  }
+  body {
+    height: 250vh;
+  }
 }
