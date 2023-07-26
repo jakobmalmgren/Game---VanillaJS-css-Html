@@ -62,7 +62,7 @@ import {
 class Character {
   constructor(data) {
     Object.assign(this, data);
-    this.maxHealth = this.health; // svårt...kolla igen...koppplat till ->
+    this.maxHealth = this.health;
     this.diceArray = getDicePlaceholderHtml(this.diceCount);
   }
 

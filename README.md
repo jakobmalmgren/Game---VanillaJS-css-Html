@@ -9,7 +9,7 @@ Why did I create this project?
 -I created this project only for practise purpose, to increase my toolbox.
 
 What particular technology did I want to learn?
--This project I focused on:
+This project I focused on:
 
 -Plain vanilla javascript
 

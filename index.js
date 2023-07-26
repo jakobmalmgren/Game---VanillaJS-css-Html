@@ -3,7 +3,7 @@ import Character from "./Character.js";
 
 let monstersArray = ["orc", "demon", "goblin"];
 
-let isWaiting = false; //kolla de
+let isWaiting = false;
 
 function getNewMonster() {
   const nextMonsterData = characterData[monstersArray.shift()];
@@ -65,12 +65,9 @@ render();
 // --------------
 function newGame() {
   document.querySelector("body").innerHTML = "";
-  //   document.getElementById("hero").innerHTML = "";
-  //   document.getElementById("monster").innerHTML = "";
   document.getElementById("hero").innerHTML = wizard.getCharacterHtml();
-  //   document.getElementById("monster").innerHTML += monster.getCharacterHtml();
 }
-document.getElementById("new").addEventListener("click", newGame);
+
 //---------------------------------------------------------
 const body = document.querySelector("body");
 const toggler = document.getElementById("toggler-indicator");
